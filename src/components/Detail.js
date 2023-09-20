@@ -35,24 +35,24 @@ function Detail() {
    return (
     <Container>
       <Background >
-        <img src={backgroundImgae} />    </Background>
+        <img src={backgroundImgae} alt="" />    </Background>
       <ImageTitile >
-        <img src={imageTitle} />
+        <img src={imageTitle} alt=""/>
       </ImageTitile>
       <Controls>
         <Playbutton>
-           <img src="/images/play-icon-black.png" />
+           <img src="/images/play-icon-black.png" alt=""/>
            <span>PLAY</span>
         </Playbutton>
         <TrainlerButton>
-        <img src="/images/play-icon-white.png" />
+        <img src="/images/play-icon-white.png" alt="" />
            <span>Trailer</span>
         </TrainlerButton>
         <AddButton>
             <span>+</span>
         </AddButton>
         <GroupWatchButton>
-          <img src="/images/group-icon.png" />
+          <img src="/images/group-icon.png" alt="" />
         </GroupWatchButton>
 
       </Controls>

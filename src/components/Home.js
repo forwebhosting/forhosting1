@@ -1,4 +1,4 @@
-import React , { useState,useEffect } from 'react'
+import React , { useEffect } from 'react'
 import styled from 'styled-components'
 import ImgSlider from './ImgSlider'
 import Viewwers from './Viewwers'
@@ -20,7 +20,7 @@ function Home() {
       });
       dispatch(setMovies(movies)) // <-- added this line to set the state with the mapped data
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <Container>
@@ -38,21 +38,20 @@ export default Home
 const Container = styled.main`
 overflow-x: hidden;
 overflow-y: hidden;
-  max-width: 100vw;
-  min-height: 93vh;
-  padding: 0 calc(3.5vw + 5px);
-  position: relative;
+max-width: 100vw;
+min-height: 93vh;
+padding: 0 calc(3.5vw + 5px);
+position: relative;
+background: url("/images/home-background.png") center/cover no-repeat fixed;
+&:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: url("/images/home-background.png") center/cover no-repeat fixed;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("/images/home-background.png") center/cover no-repeat fixed;
-    z-index: -1;
-  }
+  z-index: -1;
+}
 
 `

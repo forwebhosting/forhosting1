@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { auth, provider } from '../firebaseConfig';
-import { GoogleAuthProvider } from "firebase/auth";
+// import { GoogleAuthProvider } from "firebase/auth";
 import { AiFillHome, AiOutlineSearch, AiOutlinePlus, AiFillStar } from 'react-icons/ai';
 import { MdLocalMovies } from 'react-icons/md';
 import { RiMovie2Line } from 'react-icons/ri';
@@ -25,7 +25,7 @@ function Header() {
         
       }
     })
-  }, []);
+  }, [dispatch]);
 
   const signIn = () => {
     provider.addScope('https://www.googleapis.com/auth/userinfo.email');
@@ -61,38 +61,40 @@ function Header() {
     <Nav>
       <Logo src="/images/logo.svg" />
       {!userName ? (
-        <LoginContainer >
+        <LoginContainer>
           <Login onClick={signIn}>Login</Login>
         </LoginContainer>
       ) : (
         <>
           <NavMenu>
-            <a>
+            <a href="#home"> {/* Add valid href */}
               <AiFillHome fill="white" size="20px" />
               <span>HOME</span>
             </a>
-            <a>
+            <a href="#search"> {/* Add valid href */}
               <AiOutlineSearch fill="white" size="20px" />
               <span>SEARCH</span>
             </a>
-            <a>
+            <a href="#watchlist"> {/* Add valid href */}
               <AiOutlinePlus fill="white" size="20px" />
               <span>WATCHLIST</span>
             </a>
-            <a>
+            <a href="#originals"> {/* Add valid href */}
               <AiFillStar fill="white" size="20px" />
               <span>ORGIGINALS</span>
             </a>
-            <a>
+            <a href="#movies"> {/* Add valid href */}
               <RiMovie2Line fill="white" size="20px" />
               <span>MOVIES</span>
             </a>
-            <a>
+            <a href="#series"> {/* Add valid href */}
               <MdLocalMovies fill="white" size="20px" />
               <span>SERIES</span>
             </a>
           </NavMenu>
-          <a><span className='margin:10px'>{userName}</span></a> 
+          <a href="#user"> {/* Add valid href */}
+            <span className="margin:10px">{userName}</span>
+          </a>
           <UserLogo onClick={signOut} src={userPhoto} />
         </>
       )}
